@@ -14,9 +14,7 @@ public class Product {
         System.out.printf("Consult Product:\nName: %s\nPrice: %.2f\nQuantity: %d\n", name, price, quantity);
     }
     public double totalValueInStock(){
-        double totalValueInStock = price * quantity;
-        System.out.printf("Value Total in Stock:\nName:%s\nTotal Value:%.2f\n", name, totalValueInStock);
-        return totalValueInStock;
+        return price * quantity;
     }
     public void addProducts(int quantityAdd){
         this.quantity += quantityAdd;
@@ -25,5 +23,8 @@ public class Product {
     public void removeProducts(int quantityRemove){
         this.quantity -= quantityRemove;
         System.out.printf("Quantity in stock %s update as: %d\n", name, quantity);
+    }
+    public String toString(){
+        return "Name:" + name + "\nPrice: " + String.format("%.2f", price) + "\nin Stock:" + quantity + "\nTotal Value in Stock:"+ String.format("%.2f",totalValueInStock());
     }
 }
