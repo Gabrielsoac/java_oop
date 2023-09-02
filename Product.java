@@ -1,17 +1,52 @@
-package learning_oop;
+package learning_oop.classes;
 
-public class Product {
+public class Product { // Set var
     private String name;
     private double price;
     private int quantity;
 
-    public Product(String Name, double Price, int Quantity){
-        this.name = Name;
-        this.price = Price;
-        this.quantity = Quantity;
+    public Product(String name, double price, int quantity){ //Constructor all attributes
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
     }
+    public Product(String name, double price){ //Constructor name and price attributes
+        this.name = name;
+        this.price = price;
+    }
+    public Product(){ //Constructor no attributes
+    }
+
+    //set and get attributes:
+    //name
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+
+    //price
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+    public double getPrice(){
+        return price;
+    }
+
+    //quantity
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+    public int getQuantity(){
+        return quantity;
+    }
+
+    //Methods
     public void consultProduct(){
-        System.out.printf("Consult Product:\nName: %s\nPrice: %.2f\nQuantity: %d\n", name, price, quantity);
+        System.out.printf("Consult Product:\nName: %s\nPrice: %.2f\nQuantity: %d\n"
+                , name, price, quantity);
     }
     public double totalValueInStock(){
         return price * quantity;
@@ -25,6 +60,9 @@ public class Product {
         System.out.printf("Quantity in stock %s update as: %d\n", name, quantity);
     }
     public String toString(){
-        return "Name:" + name + "\nPrice: " + String.format("%.2f", price) + "\nin Stock:" + quantity + "\nTotal Value in Stock:"+ String.format("%.2f",totalValueInStock());
+        return "Name:" + name +
+                "\nPrice: " + String.format("%.2f", price) +
+                "\nin Stock:" + quantity +
+                "\nTotal Value in Stock:"+ String.format("%.2f",totalValueInStock());
     }
 }
