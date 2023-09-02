@@ -14,7 +14,7 @@ public class Product { // Set var
         this.name = name;
         this.price = price;
     }
-    public Product(){ //Constructor no attributes
+    public Product(){ //Constructor without attributes
     }
 
     //set and get attributes:
@@ -36,9 +36,6 @@ public class Product { // Set var
     }
 
     //quantity
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
-    }
     public int getQuantity(){
         return quantity;
     }
