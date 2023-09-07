@@ -2,8 +2,8 @@ package learning_oop.classes;
 
 public class Product { // Set var
     private String name;
-    private double price;
-    private int quantity;
+    private Double price;
+    private Integer quantity;
 
     public Product(String name, double price, int quantity){ //Constructor all attributes
         this.name = name;

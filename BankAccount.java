@@ -3,12 +3,12 @@ package learning_oop.bank;
 import java.util.Scanner;
 
 public class BankAccount {
-    Scanner input = new Scanner(System.in);
-    private int numberBank_account;
+    private Integer numberBank_account;
     private String nameHolder_account;
-    private double balance;
-    public static final double withDrawTax = 5.00;
+    private Double balance;
+    public static final Double withDrawTax = 5.00;
 
+    Scanner input = new Scanner(System.in);
     public BankAccount(int numberBank_account, String nameHolder_account, double initialDeposit){ //constructor with all attributes
         this.nameHolder_account = nameHolder_account;
         this.numberBank_account = numberBank_account;
@@ -53,7 +53,6 @@ public class BankAccount {
 
         System.out.println("Tax value:" + withDrawTax);
         System.out.printf("New balance update as: %.2f", getBalance());
-
     }
     public String toString(){
         return String.format("Name: %s\n", getNameHolderAccount())

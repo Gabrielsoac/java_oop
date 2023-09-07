@@ -1,8 +1,8 @@
-package learning_oop;
+package learning_oop.classes;
 
 public class Rectangle {
-    double width;
-    double height;
+    Double width;
+    Double height;
 
     public Rectangle(double width, double height){
         this.height = height;
