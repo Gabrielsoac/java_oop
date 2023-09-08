@@ -1,40 +1,42 @@
 package employee_system;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-        boolean menu = true;
-
-        Menu_main menu_main = new Menu_main();
+        //set default
         Scanner input = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
+
+        List<Employee> listEmployee = new ArrayList<>();
+
+        System.out.println("how many employee will be registered?");
+        int n = input.nextInt();
+        input.nextLine();
+
+        for (int i = 0; i < n; i++){
+            System.out.println("Enter data Employee #" + i + ':');
+
+            System.out.print("ID: ");
+            Integer id = input.nextInt();
+            input.nextLine();
+
+            System.out.print("Name: ");
+            String name = input.nextLine();
 
 
-        int quantity_employees = 0;
+            System.out.print("Salary: ");
+            Double salary = input.nextDouble();
 
-        while (menu = true) {
+            Employee emp = new Employee(id, name, salary);
 
-            menu_main.menu_main();
-
-            System.out.print("Enter the option: ");
-            int choice = input.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("How many employees do you want to add?");
-                    break;
-                case 2:
-                    System.out.println("Consult here");
-                    break;
-
-                case 3:
-                    System.out.println("update here");
-                    break;
-                case 4:
-                    System.out.println("Close here");
-                    break;
-
-            }
+            listEmployee.add(emp);
         }
+
     }
 }
+
