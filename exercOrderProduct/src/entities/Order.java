@@ -2,6 +2,7 @@ package entities;
 
 import entities.Enums.OrderStatus;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +32,9 @@ public class Order {
     @Override
     public String toString(){
         StringBuilder stringFormatted = new StringBuilder();
-        stringFormatted.append("Order moment : " + moment + "\n"
+        stringFormatted.append("Order moment : " + moment.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n"
                 + "Order Status: " + status + "\n"
-                + "Client: "+client + "\n"+ "Order Items: ");
+                + "Client: "+ client + "\n"+ "Order Items: ");
         for (OrderItem item : listItems){
             stringFormatted.append(item + "\n");
         }

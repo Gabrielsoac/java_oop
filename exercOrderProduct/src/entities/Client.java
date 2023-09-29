@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
     //atributes
@@ -50,7 +51,7 @@ public class Client {
         StringBuilder stringFormatted = new StringBuilder();
 
         stringFormatted.append("Client: " + name + " "
-                + birthDate + " "
+                + birthDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " "
                 + email);
         return stringFormatted.toString();
     }

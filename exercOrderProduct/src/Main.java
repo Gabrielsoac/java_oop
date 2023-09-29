@@ -34,6 +34,7 @@ public class Main {
 
         Order pedido = new Order(LocalDateTime.now(), OrderStatus.valueOf(status), new Client(name, email, LocalDate.parse(birthDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
 
+        double totalprice = 0;
         for (int i = 0; i < orderQuantity; i++) {
             System.out.print("Product Name: ");
             String nameProduct = input.nextLine();
@@ -44,12 +45,15 @@ public class Main {
 
             System.out.print("Quantity: ");
             Integer quantity = input.nextInt();
+            input.nextLine();
 
             OrderItem item = new OrderItem(quantity, new Product(nameProduct, productPrice));
             pedido.addItem(item);
 
+            totalprice += item.subTotal();
         }
 
         System.out.println(pedido);
+        System.out.println("Total Price: "+ totalprice);
     }
 }

@@ -23,9 +23,9 @@ public class OrderItem {
     @Override
     public String toString(){
         StringBuilder stringFormatted = new StringBuilder();
-        stringFormatted.append(product.getName() + " "
-                + product.getPrice() + ""
-                + quantity + "\n" + subTotal());
+        stringFormatted.append(product.getName() + "\n"
+                + product.getPrice() + "\n"
+                + "Quantity: " + quantity + "\n" + "Sub Total: " + subTotal());
 
         return stringFormatted.toString();
     }
