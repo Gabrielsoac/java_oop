@@ -1,0 +1,6 @@
+entities/Client.class
+entities/Register.class
+entities/enums/StatusOperation.class
+application/Main.class
+entities/enums/TypeOperation.class
+entities/Account.class
